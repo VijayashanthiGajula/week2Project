@@ -20,12 +20,12 @@ public class Timer : MonoBehaviour
     void Update()
     {
         float t = Time.time - startTime;
-        //string minutes=((int)t/60).ToString();
+        string minutes=((int)t/60).ToString();
 
-        float minutes = t / 60;
-         score = score - minutes;
-        //string sec = (t % 60).ToString("f0");
-        timertext.text = "Score : " + score.ToString("f0");
+       // float minutes = t / 60;
+         //score = score - minutes;
+        string sec = (t % 60).ToString("f0");
+        timertext.text = "Score : " + minutes+ ":"+sec;
         //  timertext.    
 
     }
