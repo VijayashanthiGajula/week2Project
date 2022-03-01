@@ -56,14 +56,7 @@ public class CharController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if (isGrounded == true )
-        {
-            Playerlives--;
-            
-           // s.score = 60;
-            Player.transform.position= respawnPoint.position;
-                        
-        }
+        
         PlayerSideMovement();
         PlayerJump();
     }
