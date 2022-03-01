@@ -59,8 +59,8 @@ public class CharController : MonoBehaviour
         if (isGrounded == true )
         {
             Playerlives--;
-            Timer t = Player.GetComponent<Timer>();
-            t.score = 60;
+            
+           // s.score = 60;
             Player.transform.position= respawnPoint.position;
                         
         }
