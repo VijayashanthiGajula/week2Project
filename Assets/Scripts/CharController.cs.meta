@@ -3,7 +3,14 @@ guid: 2a52ff663b5d4ad4d85ae8a4d8eca7fc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - controller: {instanceID: 0}
+  - cam: {instanceID: 0}
+  - groundCheck: {instanceID: 0}
+  - CoinAudioSource: {instanceID: 0}
+  - Player: {fileID: 5744562180975705119, guid: 89b51d6bc711e8c418db3c5293e35444, type: 3}
+  - srtpos: {instanceID: 0}
+  - respawnPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

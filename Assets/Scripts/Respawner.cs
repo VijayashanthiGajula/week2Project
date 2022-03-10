@@ -5,17 +5,18 @@ using UnityEngine;
 public class Respawner : MonoBehaviour
 {
     public int PlayerLives;
+    public GameObject GO;
     [SerializeField] Transform player;
     [SerializeField] Transform respawnPoint;
-  //  private void OnCollisionEnter(Collision other) {
-        // 
-      //  player.transform.position = respawnPoint.transform.position;  
-    // 
-    // if (other==player && PlayerLives >= 0)
-// {
-      // Debug.Log("Collided ");
 
-            //  other.transform.position=respawnPoint.transform.position;
-// }
- 
+
+  private void OnTriggerEnter(Collider other)
+    {
+         if(other.tag=="Lava"){
+             Debug.Log(other.tag);
+             Destroy(GO);
+             
+        }
+    }
+
 }

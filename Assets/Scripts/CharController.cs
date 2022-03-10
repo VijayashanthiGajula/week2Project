@@ -10,14 +10,14 @@ public class CharController : MonoBehaviour
     public CharacterController controller;
 
     public Transform cam;
-    public float speed = 6f;
+    public float speed = 12f;
     public float turnSmoothTime = 0.1f;
     [SerializeField] float turnSmoothVelocity;
 
     //************************************************************************
     [Header("Ground Check")]
 
-    public float gravity = -2f;
+    public float gravity = -10f;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -25,7 +25,7 @@ public class CharController : MonoBehaviour
     bool isGrounded;
     //************************************************************************
     [Header("Jump")]
-    public float jumpHeight;
+    public float jumpHeight = 3f;
     public AudioSource CoinAudioSource;
 
     //************************************************************************
@@ -34,7 +34,7 @@ public class CharController : MonoBehaviour
     public GameObject Player;
     public Transform srtpos;
     private GameObject PlayerInstance;
-    public int Playerlives;
+    public int Playerlives = 4;
     [SerializeField] Transform respawnPoint;
     private void Start()
     {
@@ -43,20 +43,18 @@ public class CharController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "coin")
         {
-            Debug.Log("true");
+            Debug.Log(other.tag);
             CoinAudioSource.Play();
             Destroy(other.gameObject);
 
         }
-
     }
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
+
         PlayerSideMovement();
         PlayerJump();
     }
@@ -82,7 +80,7 @@ public class CharController : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f;
+            velocity.y = -10f;
         }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -90,6 +88,7 @@ public class CharController : MonoBehaviour
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
     }
 
 
