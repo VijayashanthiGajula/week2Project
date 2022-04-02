@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Respawner : MonoBehaviour
 {
-    public int PlayerLives;
-    public GameObject GO;
-    [SerializeField] Transform player;
-    [SerializeField] Transform respawnPoint;
+     public GameObject Player;
+    public GameObject playerInstance;
+    public int lives=4;
+    float respawnTimer;
+     [SerializeField] Transform respawnPoint;
 
 
-  private void OnTriggerEnter(Collider other)
+    // Start is called before the first frame update
+    void Start()
     {
-         if(other.tag=="Lava"){
-             Debug.Log(other.tag);
-             Destroy(GO);
-             
-        }
+        //Spawner();
     }
-
+ 
 }

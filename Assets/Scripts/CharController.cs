@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharController : MonoBehaviour
 
@@ -30,16 +31,22 @@ public class CharController : MonoBehaviour
 
     //************************************************************************
     // private GameManager gameManager;
-    // [Header("Spawner")]
+    [Header("Spawner")]
     public GameObject Player;
-    public Transform srtpos;
+
     private GameObject PlayerInstance;
-    public int Playerlives = 4;
+    public int Playerlives ;
+    public Transform srtpos;
     [SerializeField] Transform respawnPoint;
+    public Text PlayerLives;
+    public Text Score;
+    public bool win=false;
     private void Start()
     {
 
         Cursor.lockState = CursorLockMode.Locked;
+        srtpos = GetComponent<Transform>();
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -48,7 +55,21 @@ public class CharController : MonoBehaviour
             Debug.Log(other.tag);
             CoinAudioSource.Play();
             Destroy(other.gameObject);
+        }
 
+        if (other.tag == "Lava")
+        {
+            if (Playerlives >= 0)
+            {
+              Playerlives--;
+            srtpos.transform.position = respawnPoint.transform.position;
+            }
+        }
+        if(other.tag=="Win" )
+        {
+     PlayerLives.text = "Winner "+  Score.text;
+      Destroy(other.gameObject);
+        win=true;
         }
     }
     void Update()
@@ -57,7 +78,10 @@ public class CharController : MonoBehaviour
 
         PlayerSideMovement();
         PlayerJump();
+        PlayerHealth();
+
     }
+
     void PlayerSideMovement()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -90,7 +114,23 @@ public class CharController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
     }
-
+    void PlayerHealth()
+    {
+        if(win==false){
+        if (Playerlives >= 0)
+        {
+            PlayerLives.text = "Lives left- " + Playerlives;
+        }
+        else
+        {
+            PlayerLives.text = "Lives - 0";
+        }
+        if (Playerlives < 0)
+        {
+            PlayerLives.text = "GameOver";
+        }
+        }
+    }
 
 }
 

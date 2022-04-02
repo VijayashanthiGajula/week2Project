@@ -4,7 +4,6 @@ ScriptsOnlyBuild:
     - CharController
     - CoinController
     - MusicLoop
-    - Respawner
     - Timer
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -71,39 +70,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1758}
+      Script: {instanceID: 1652}
     - Class: 114
       Script: {instanceID: 1894}
     - Class: 114
-      Script: {instanceID: 2002}
+      Script: {instanceID: 1914}
     - Class: 114
-      Script: {instanceID: 2020}
+      Script: {instanceID: 2056}
     - Class: 114
-      Script: {instanceID: 2162}
+      Script: {instanceID: 2228}
     - Class: 114
-      Script: {instanceID: 2334}
+      Script: {instanceID: 2338}
     - Class: 114
-      Script: {instanceID: 2444}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 2478}
+      Script: {instanceID: 2438}
     - Class: 114
-      Script: {instanceID: 2544}
+      Script: {instanceID: 2504}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2678}
+      Script: {instanceID: 2682}
     - Class: 114
-      Script: {instanceID: 2788}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 2986}
+      Script: {instanceID: 4294}
     - Class: 114
-      Script: {instanceID: 4398}
+      Script: {instanceID: 4320}
     - Class: 114
-      Script: {instanceID: 4424}
+      Script: {instanceID: 4634}
     - Class: 114
-      Script: {instanceID: 4738}
-    - Class: 114
-      Script: {instanceID: 4864}
+      Script: {instanceID: 4760}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -233,19 +230,7 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: scr
-  - hash:
-      serializedVersion: 2
-      Hash: b07a1db049bcc328194ab260d0c20d2b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Respawner
-  - hash:
-      serializedVersion: 2
-      Hash: c8b0bcbad55aefa70e34263645b7f815
+      Hash: 7b3f1b960910941309b675c4e6d6cdc3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharController
@@ -785,7 +770,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: e6afd8fca3cc78e9b5990e69eb485875
+      Hash: 6fb6f04153a483005b57c38c49408f27
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Timer
@@ -876,4 +861,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/vijay/OneDrive/Documents/GitHub/week2Project.exe
+  playerPath: C:/Users/vijay/OneDrive/Documents/GitHub/3DUltimateObstacles/week2Project.exe
